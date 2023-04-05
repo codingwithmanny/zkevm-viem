@@ -174,3 +174,7 @@ pnpm contract:logs; # npm run contract:logs;
 #     }
 #   }
 ```
+
+---
+
+built by [@codingwithmanny](https://twitter.com/codingwithmanny)
