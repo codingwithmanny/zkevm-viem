@@ -2,7 +2,7 @@
 // ========================================================
 import { GreeterContract } from './contract';
 import { createPublicClient, http, createWalletClient } from 'viem';
-import { privateKeyToAccount } from 'viem/accounts' ;
+import { privateKeyToAccount } from 'viem/accounts';
 import { polygonZkEvmTestnet } from 'viem/chains';
 import dotenv from 'dotenv';
 
