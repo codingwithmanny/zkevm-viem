@@ -1,0 +1,29 @@
+{
+  "name": "zkevm-viem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "contract:deploy": "./node_modules/.bin/ts-node src/deploy.ts",
+    "contract:read": "./node_modules/.bin/ts-node src/read.ts",
+    "contract:logs": "./node_modules/.bin/ts-node src/logs.ts",
+    "contract:write": "./node_modules/.bin/ts-node src/write.ts",
+    "start": "./node_modules/.bin/ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "viem": "^0.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
