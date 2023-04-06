@@ -31,7 +31,7 @@ const publicClient = createPublicClient({
     })
     const logs = await publicClient.getFilterLogs({ filter });
     
-    console.log('args', logs[0].args)
+    console.log('decoded topics (args)', logs[0].args)
 
 
     console.groupEnd();
