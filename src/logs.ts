@@ -22,25 +22,17 @@ const publicClient = createPublicClient({
     const blockNumber = await publicClient.getBlockNumber();
     console.log({ blockNumber });
 
-    // Read logs from contract
-    const logs = await publicClient.getLogs({
+    const filter = await publicClient.createContractEventFilter({
         ...GreeterContract,
         address: `${process.env.CONTRACT_ADDRESS}` as `0x${string}`,
-        // Retrieve specific log event object
-        event: GreeterContract.abi.find((func) => func.type === "event" && func.name === "NewGreeting"),
-        // adjust fromBlock as needed
+        eventName: 'NewGreeting',
         fromBlock: blockNumber - 100n,
         toBlock: blockNumber,
-    } as GetLogsParameters);
-    console.log({ logs });
+    })
+    const logs = await publicClient.getFilterLogs({ filter });
+    
+    console.log('decoded topics (args)', logs[0].args)
 
-    // Decode first log from array retrieved
-    const topics = decodeEventLog({
-        abi: GreeterContract.abi,
-        topics: logs?.[0]?.topics,
-        data: `${logs?.[0]?.data.toString()}` as `0x${string}`
-    });
-    console.log({ topics });
 
     console.groupEnd();
 })();
