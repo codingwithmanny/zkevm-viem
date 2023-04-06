@@ -28,7 +28,6 @@ const walletClient = createWalletClient({
     // Deploy contract and get transaction hash
     const hash = await walletClient.deployContract({
         ...GreeterContract,
-        account,
         args: ["Hello from @codingwithmanny"]
     });
     console.log({ hash });
